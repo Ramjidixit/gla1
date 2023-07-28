@@ -1,0 +1,164 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .Allq {
+    background-color: green;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+  
+  .Allq p {
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+  }
+  
+  .Allq a {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+    display: flex;
+  }
+  
+
+  
+
+  .green{
+    background-color: rgb(8, 216, 8);
+    padding: 20px;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.green label,
+.green input,
+.green textarea,
+.green button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.green input{
+    height: 30px;
+}
+
+.green textarea {
+    resize: vertical; 
+    height: 80px;
+}
+
+.green button {
+    background-color: rgb(28, 61, 28);
+    color: white;
+    border: none;
+    padding: 12px 12px; 
+    border-radius: 3px;
+    cursor: pointer;
+    width: auto;
+ }
+.ranga{
+width: 500px;
+height: 150px;
+background-color: aqua;
+margin-top: 20px;
+/* justify-content: center;
+align-items: center; */
+overflow: scroll;
+}
+.ranga h3 {
+    font-size: 24px;
+    font-weight: bold;
+    word-wrap: break-word;
+  }
+  
+.ranga p {
+    font-size: 20px;
+    word-wrap: break-word;
+  } 
+
+.quote-box {
+  margin-left: 35%;
+  width: 500px; 
+  padding: 20px;
+ 
+}
+
+
+.quote-box h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+
+.quote-box p {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+}
+
+
+.quote-box a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+}
+
+.quote-box a:hover {
+  text-decoration: underline;
+}
+button {
+  color: #090909;
+  padding: 0.3em 0.3em;
+  font-size: 10px;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 2px 2px 4px #c5c5c5, -2px -2px 4px #ffffff;
+  margin-left: 40%;
+  margin-top: 3%;
+}
+
+button:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
+}
+
+  </style>
+</head>
+<body>
+  <div class="Allq">
+    <p>Great Quotes</p>
+    <a href="/">All Quotes</a>
+    <a href="/new-quote">New Quotes</a>
+  </div>
+  <h1>All Quotes</h1>
+  
+  <div class="quote-box">
+    <% if (quotes.length > 0) { %>
+      <% quotes.forEach((quote) => { %>
+        <div class="ranga">
+          <p><%= quote.quote %></p>
+          <h3><%= quote.author %></h3>
+          <button>View Full Quote</button>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>There is no Query. Please Write.</p>
+    <% } %>
+  </div>
+</body>
+</html>
